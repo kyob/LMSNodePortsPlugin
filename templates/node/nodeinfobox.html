@@ -1,0 +1,32 @@
+{block name="nodeinfobox-rightcolumn" append}
+    <tr>
+        <td>
+            <img src="img/ip.gif" alt="{$nodeinfo.ip}">
+        </td>
+        <td>
+            {trans("Open local IP")} {trans("with port")}:
+        </td>
+        <td>
+            {section name=arr loop=$nodeinfo.ports}
+                {assign var=item value=$nodeinfo.ports[arr]}
+                [ <a href="{$nodeinfo.url_protocol}://{$nodeinfo.ip}:{$item}">{$item}</a> ]&nbsp;
+            {/section}
+        </td>
+    </tr>
+    {if $nodeinfo.ip_pub != "0.0.0.0"}
+        <tr>
+            <td>
+                <img src="img/ip_pub.gif" alt="{$nodeinfo.ip_pub}">
+            </td>
+            <td>
+                {trans("Open public IP")} {trans("with port")}:
+            </td>
+            <td>
+                {section name=arr loop=$nodeinfo.public_ports}
+                    {assign var=item value=$nodeinfo.public_ports[arr]}
+                    [ <a href="{$nodeinfo.url_protocol}://{$nodeinfo.ip_pub}:{$item}">{$item}</a> ]&nbsp;
+                {/section}
+            </td>
+        </tr>
+    {/if}
+{/block}
