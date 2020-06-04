@@ -2,7 +2,7 @@
 
 Extra node ports for assigned IP addresses to fast access.
 
-![](lms-plugin-node-ports?raw=true)
+![](lms-plugin-node-ports.png?raw=true)
 
 ## Requirements
 
